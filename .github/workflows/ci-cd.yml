@@ -1,4 +1,5 @@
 name: Build Han-Tech APK
+
 on:
   push:
     branches: [ "main" ]
@@ -37,7 +38,8 @@ jobs:
     - name: Build Android APK
       working-directory: apps/mobile-app
       run: |
-        flet build apk --project "hantech" --org "com.hantech" --product "HanTech"
+        # The --yes flag automatically accepts any prompts (like Flutter SDK download)
+        flet build apk --project "hantech" --org "com.hantech" --product "HanTech" --yes
 
     - name: Upload APK
       uses: actions/upload-artifact@v4
