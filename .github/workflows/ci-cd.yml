@@ -1,46 +1,50 @@
 name: Build Han-Tech APK
-
 on:
   push:
     branches: [ "main" ]
     paths:
-      - 'apps/mobile-app/**' # Only trigger if mobile app files change
-  workflow_dispatch: # Allows you to manually trigger the build
+      - 'apps/mobile-app/**'
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
-
-    - name: Set up Python
+    - uses: actions/checkout@v4
+    
+    - name: Setup Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.11'
-
+        
+    - name: Setup Java JDK
+      uses: actions/setup-java@v4
+      with:
+        distribution: 'temurin'
+        java-version: '21'
+        
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.22.2'
+        
     - name: Install Flet
       run: |
         python -m pip install --upgrade pip
         pip install flet
-
-    - name: Build Android APK
+        
+    - name: Build APK
       working-directory: apps/mobile-app
       run: |
-        # Flet requires a pyproject.toml to build. We generate a basic one here.
         echo "[project]" > pyproject.toml
         echo "name = 'hantech'" >> pyproject.toml
         echo "version = '1.0.0'" >> pyproject.toml
         echo "requires-python = '>=3.8'" >> pyproject.toml
         echo "dependencies = ['flet']" >> pyproject.toml
-        
-        # Build the APK
         flet build apk --project "Han-Tech" --org "com.hantech" --app-name "HanTech"
-
-    - name: Upload APK Artifact
+        
+    - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
         name: HanTech-APK
-        # Flet outputs the APK to the build/apk directory
         path: apps/mobile-app/build/apk/*.apk
