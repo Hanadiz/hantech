@@ -33,16 +33,19 @@ jobs:
         python -m pip install --upgrade pip
         pip install flet
         
-    - name: Build APK
-      working-directory: apps/mobile-app
-      run: |
-        echo "[project]" > pyproject.toml
-        echo "name = 'hantech'" >> pyproject.toml
-        echo "version = '1.0.0'" >> pyproject.toml
-        echo "requires-python = '>=3.8'" >> pyproject.toml
-        echo "dependencies = ['flet']" >> pyproject.toml
-        flet build apk --project "Han-Tech" --org "com.hantech" --app-name "HanTech"
-        
+
+- name: Build APK
+  working-directory: apps/mobile-app
+  run: |
+    echo "[project]" > pyproject.toml
+    echo "name = 'hantech'" >> pyproject.toml
+    echo "version = '1.0.0'" >> pyproject.toml
+    echo "requires-python = '>=3.8'" >> pyproject.toml
+    echo "dependencies = ['flet']" >> pyproject.toml
+    
+    # Corrected flags: Use --project and --product, not --app-name
+    flet build apk --project "hantech" --org "com.hantech" --product "HanTech"
+
     - name: Upload APK
       uses: actions/upload-artifact@v4
       with:
