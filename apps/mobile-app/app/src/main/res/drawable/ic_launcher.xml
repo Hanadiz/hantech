@@ -9,43 +9,39 @@
         android:fillColor="#1A1A19"
         android:pathData="M0,0h108v108h-108z" />
         
-    <!-- Tech Hexagon Background (Brand Blue) -->
+    <!-- Blue Circle Background -->
     <path
         android:fillColor="#3D7BF7"
-        android:pathData="M54,10 L90,30 L90,78 L54,98 L18,78 L18,30 Z" />
+        android:pathData="M54,16 C74.99,16 92,33.01 92,54 C92,74.99 74.99,92 54,92 C33.01,92 16,74.99 16,54 C16,33.01 33.01,16 54,16 Z" />
         
-    <!-- Microchip Body (White) -->
+    <!-- Antenna Dish (White) -->
     <path
         android:fillColor="#FFFFFF"
-        android:pathData="M38,38 h32 v32 h-32 z" />
+        android:pathData="M38,58 Q54,78 70,58 Z" />
         
-    <!-- Microchip Inner Core (Charcoal) -->
+    <!-- Antenna Stem (White) -->
     <path
-        android:fillColor="#1A1A19"
-        android:pathData="M46,46 h16 v16 h-16 z" />
+        android:fillColor="#FFFFFF"
+        android:pathData="M52,58 h4 v16 h-4 z" />
         
-    <!-- Center Glowing Node (Brand Blue) -->
+    <!-- Antenna Base (White) -->
     <path
-        android:fillColor="#3D7BF7"
-        android:pathData="M54,50 A4,4 0 1,0 54,58 A4,4 0 1,0 54,50 Z" />
+        android:fillColor="#FFFFFF"
+        android:pathData="M46,74 h16 v4 h-16 z" />
         
-    <!-- Top Pins -->
-    <path android:fillColor="#FFFFFF" android:pathData="M44,26 h4 v12 h-4 z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M52,26 h4 v12 h-4 z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M60,26 h4 v12 h-4 z" />
-    
-    <!-- Bottom Pins -->
-    <path android:fillColor="#FFFFFF" android:pathData="M44,70 h4 v12 h-4 z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M52,70 h4 v12 h-4 z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M60,70 h4 v12 h-4 z" />
-    
-    <!-- Left Pins -->
-    <path android:fillColor="#FFFFFF" android:pathData="M26,44 h12 v4 h-12 z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M26,52 h12 v4 h-12 z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M26,60 h12 v4 h-12 z" />
-    
-    <!-- Right Pins -->
-    <path android:fillColor="#FFFFFF" android:pathData="M70,44 h12 v4 h-12 z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M70,52 h12 v4 h-12 z" />
-    <path android:fillColor="#FFFFFF" android:pathData="M70,60 h12 v4 h-12 z" />
+    <!-- Signal Wave 1 (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M42,48 Q54,38 66,48 L62,52 Q54,44 46,52 Z" />
+        
+    <!-- Signal Wave 2 (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M32,38 Q54,20 76,38 L72,42 Q54,28 36,42 Z" />
+        
+    <!-- Center Signal Node (White) -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,52 A4,4 0 1,0 58,52 A4,4 0 1,0 50,52 Z" />
+        
 </vector>
