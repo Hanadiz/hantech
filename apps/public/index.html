@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Han-Tech Ltd | Community IT Services</title>
+    <style>
+        :root {
+            --brand-charcoal: #1A1A19;
+            --brand-blue: #3D7BF7;
+            --bg-color: #FAF9FB;
+            --text-color: #333333;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        
+        /* Navigation */
+        nav { background-color: var(--brand-charcoal); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        nav h1 { color: white; font-size: 24px; }
+        nav h1 span { color: var(--brand-blue); }
+
+        /* Hero Section */
+        .hero { text-align: center; padding: 80px 20px; background: white; }
+        .hero h2 { font-size: 36px; color: var(--brand-charcoal); margin-bottom: 10px; }
+        .hero p { font-size: 18px; color: #666; max-width: 600px; margin: 0 auto; }
+
+        /* Services */
+        .services { padding: 60px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+        .services h3 { font-size: 28px; margin-bottom: 40px; color: var(--brand-charcoal); }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border-top: 4px solid var(--brand-blue); }
+        .card h4 { font-size: 20px; margin-bottom: 10px; }
+        .card p { color: #666; font-size: 14px; }
+
+        /* Feedback Form */
+        .contact-section { background: var(--brand-charcoal); padding: 60px 20px; color: white; text-align: center; }
+        .contact-section h3 { font-size: 28px; margin-bottom: 20px; }
+        .form-container { max-width: 500px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; color: var(--text-color); }
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
+        .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { width: 100%; padding: 15px; background-color: var(--brand-blue); color: white; border: none; border-radius: 5px; font-size: 16px; cursor: pointer; transition: 0.3s; }
+        button:hover { background-color: #2b5fcf; }
+        #form-message { margin-top: 15px; font-weight: bold; text-align: center; }
+        
+        footer { text-align: center; padding: 20px; background: #111; color: #888; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h1>Han-<span>Tech</span> Ltd</h1>
+    </nav>
+
+    <header class="hero">
+        <h2>Empowering the Community with Technology</h2>
+        <p>We provide reliable, professional IT services to help our community grow and stay connected.</p>
+    </header>
+
+    <section class="services">
+        <h3>Our Services</h3>
+        <div class="service-grid">
+            <div class="card">
+                <h4>🛠️ Tech Support</h4>
+                <p>Fast and reliable troubleshooting for all your hardware and software needs.</p>
+            </div>
+            <div class="card">
+                <h4>🌐 Network Setup</h4>
+                <p>Secure and high-speed networking solutions for homes and local businesses.</p>
+            </div>
+            <div class="card">
+                <h4>💻 IT Consulting</h4>
+                <p>Expert advice to help you choose the right technology for your goals.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <h3>Leave Us Your Feedback</h3>
+        <div class="form-container">
+            <form id="feedbackForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Used</label>
+                    <select id="service" required>
+                        <option value="Tech Support">Tech Support</option>
+                        <option value="Network Setup">Network Setup</option>
+                        <option value="IT Consulting">IT Consulting</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rating">Rating (1-5)</label>
+                    <input type="number" id="rating" min="1" max="5" required placeholder="5">
+                </div>
+                <div class="form-group">
+                    <label for="comments">Comments</label>
+                    <textarea id="comments" rows="3" placeholder="Tell us how we did..."></textarea>
+                </div>
+                <button type="submit" id="submitBtn">Submit Feedback</button>
+                <div id="form-message"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Han-Tech Ltd. All rights reserved.
+    </footer>
+
+    <script>
+        // REPLACE THIS URL with your actual Render URL once deployed!
+        const API_URL = "https://your-render-url.onrender.com";
+
+        document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            const msg = document.getElementById('form-message');
+            
+            btn.innerText = "Submitting...";
+            btn.disabled = true;
+
+            const payload = {
+                customer_name: document.getElementById('name').value,
+                service_used: document.getElementById('service').value,
+                rating: parseInt(document.getElementById('rating').value),
+                comments: document.getElementById('comments').value
+            };
+
+            try {
+                // Note: If you haven't deployed the backend yet, this will show an error.
+                const response = await fetch(`${API_URL}/feedback/`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    msg.style.color = "green";
+                    msg.innerText = "Thank you! Your feedback has been received.";
+                    document.getElementById('feedbackForm').reset();
+                } else {
+                    throw new Error("Failed to submit");
+                }
+            } catch (error) {
+                msg.style.color = "red";
+                msg.innerText = "Error: Could not connect to the backend. Make sure the API URL is correct.";
+            } finally {
+                btn.innerText = "Submit Feedback";
+                btn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
