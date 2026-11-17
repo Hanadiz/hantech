@@ -13,7 +13,7 @@ import com.hantech.network.FeedbackRequest
 import com.hantech.network.RetrofitClient
 import kotlinx.coroutines.launch
 
-class FeedbackFragment : Fragment(R.layout.fragment_dashboard) { // Reusing the dashboard layout we made earlier
+class FeedbackFragment : Fragment(R.layout.fragment_feedback) { // UPDATED LAYOUT NAME
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
