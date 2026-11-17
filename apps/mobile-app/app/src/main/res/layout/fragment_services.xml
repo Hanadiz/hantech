@@ -2,8 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FAF9FB">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,10 +13,9 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Our IT Services"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="@color/hantech_charcoal"
+            android:text="Explore what we offer"
+            android:textSize="18sp"
+            android:textColor="@color/text_secondary"
             android:layout_marginBottom="20dp"/>
 
         <!-- Service 1 -->
@@ -25,15 +23,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛠️ Technical Support" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/hantech_blue"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="On-site and remote troubleshooting for all hardware and software." android:textSize="14sp" android:layout_marginTop="4dp"/>
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            app:strokeColor="@color/secondary"
+            app:strokeWidth="2dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛠️ Technical Support" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="On-site and remote troubleshooting for all hardware and software." android:textSize="14sp" android:textColor="@color/text_secondary" android:layout_marginTop="8dp"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -42,15 +38,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🌐 Network Setup & Security" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/hantech_blue"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Secure Wi-Fi setup, firewalls, and network optimization for businesses." android:textSize="14sp" android:layout_marginTop="4dp"/>
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🌐 Network Setup and Security" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Secure Wi-Fi setup, firewalls, and network optimization for businesses." android:textSize="14sp" android:textColor="@color/text_secondary" android:layout_marginTop="8dp"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -59,15 +51,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            app:cardCornerRadius="12dp"
-            app:cardElevation="2dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💻 Hardware Repair" android:textSize="18sp" android:textStyle="bold" android:textColor="@color/hantech_blue"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Screen replacements, data recovery, and laptop/desktop upgrades." android:textSize="14sp" android:layout_marginTop="4dp"/>
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💻 Hardware Repair" android:textSize="20sp" android:textStyle="bold" android:textColor="@color/text_primary"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Screen replacements, data recovery, and laptop/desktop upgrades." android:textSize="14sp" android:textColor="@color/text_secondary" android:layout_marginTop="8dp"/>
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>
 
